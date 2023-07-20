@@ -9,6 +9,13 @@ const canvas = document.createElement('div');
 canvas.classList.add('canvas');
 app.appendChild(canvas);
 
+function generateRandomRgb() {
+  const red = Math.round(Math.random() * 255);
+  const green = Math.round(Math.random() * 255);
+  const blue = Math.round(Math.random() * 255);
+  return `rgb(${red}, ${green}, ${blue}`;
+}
+
 function updateGrid() {
   cleanCanvas();
   let gridSize = getGridSize();
@@ -42,6 +49,6 @@ function generateGrid(fullGridSize) {
 }
 
 function changeColor(e) {
-  e.target.style.backgroundColor = 'blue';
+  e.target.style.backgroundColor = generateRandomRgb();
 }
 
